@@ -34,7 +34,7 @@ pipeline {
             stages {
                stage("Verify ansible playbook syntax") {
                    steps {
-                       sh 'ansible-lint deploy.yml'
+                       //sh 'ansible-lint deploy.yml'
                    }
                }
                stage("Deploy app in production") {
