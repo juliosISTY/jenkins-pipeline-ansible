@@ -13,11 +13,14 @@
     - name: install python3-pip
       yum: name=python3-pip state=present update_cache=yes
     - name: upgrade pip
-      shell: pip install --upgrade pip
+      shell: pip3 install --upgrade pip
       args:
         executable: /bin/bash
     - name: Install docker python
-      pip: name=docker-py
+      #pip: name=docker-py
+      shell: pip3 install docker-py
+      args:
+        executable: /bin/bash
   tasks:
     - name: Create Apache container
       docker_container:
