@@ -8,7 +8,7 @@
     - name: Install EPEL repo
       package: name=epel-release state=present
       when: ansible_distribution == "CentOS"
-    - name: install python-pip
+    - name: install python3-pip
       yum: name=python-pip state=present update_cache=yes
     - name: Install docker python
       pip: name=docker-py
