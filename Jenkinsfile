@@ -30,11 +30,11 @@ pipeline {
             environment {
                 SUDOPASS = credentials('sudopass')
             }
-            agent { docker { image 'registry.gitlab.com/robconnolly/docker-ansible:latest' } }
+            agent { docker { image 'julios2/docker-ansible:latest' } }  //registry.gitlab.com/robconnolly/docker-ansible:latest
             stages {
                stage("Verify ansible playbook syntax") {
                    steps {
-                       sh 'echo $PWD'   //sh 'ansible-lint deploy.yml'
+                       sh 'ansible-lint deploy.yml'
                    }
                }
                stage("Deploy app in production") {
